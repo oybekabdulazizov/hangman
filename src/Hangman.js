@@ -10,6 +10,7 @@ class Hangman extends Component {
             answer: "react"
         }
         this.handleGuess = this.handleGuess.bind(this);
+        this.restart = this.restart.bind(this);
     }
 
     static defaultProps = {
@@ -28,6 +29,13 @@ class Hangman extends Component {
         this.setState(currState => ({
             guessed: currState.guessed.add(ltr),
             nWrongGuesses: currState.nWrongGuesses + (currState.answer.includes(ltr) ? 0 : 1)
+        }));
+    }
+
+    restart() {
+        this.setState(currState => ({
+            nWrongGuesses: 0, 
+            guessed: new Set()
         }));
     }
 
@@ -52,6 +60,7 @@ class Hangman extends Component {
                 <p>Wrong letters guessed: {this.state.nWrongGuesses}</p>
                 <p>{this.guessedWord()}</p>
                 <p>{this.generateButtons()}</p>
+                <button onClick={this.restart}>Restart</button>
             </div>
         )
     }
