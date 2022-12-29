@@ -1,11 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mali&display=swap');
 
 body {
   margin: 0;
-  font-family: 'Covered By Your Grace', cursive;
+  font-family: 'Mali', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  background: url('./images/bg.jpg');
-  background-size: 100%;
 }
