@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { img0, img1, img2, img3, img4, img5, img6 } from './images';
+import { getRandomgWord } from './words';
 
 class Hangman extends Component {
     constructor(props) {
@@ -7,7 +8,7 @@ class Hangman extends Component {
         this.state = {
             nWrongGuesses: 0, 
             guessed: new Set(), 
-            answer: "react"
+            answer: getRandomgWord()
         }
         this.handleGuess = this.handleGuess.bind(this);
         this.restart = this.restart.bind(this);
@@ -35,7 +36,8 @@ class Hangman extends Component {
     restart() {
         this.setState(currState => ({
             nWrongGuesses: 0, 
-            guessed: new Set()
+            guessed: new Set(), 
+            answer: getRandomgWord()
         }));
     }
 
